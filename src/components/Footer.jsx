@@ -19,14 +19,14 @@ const Footer = () => {
         <motion.div initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
           <span className="block h-16 w-52 overflow-hidden">
             <img
-              src="/images/header-logo/CyM.png"
-              alt="CyM Centurión & Mendoza Constructora"
-              className="h-full w-auto origin-left object-contain"
-              width="250"
-              height="74"
-              loading="eager"
-              decoding="async"
-            />
+  src="/images/header-logo/CyM.png"
+  alt="CyM Centurión & Mendoza Constructora"
+  className="h-full w-20 origin-left object-contain scale-[2.1] -translate-x-12"
+  width="200"
+  height="150"
+  loading="eager"
+  decoding="async"
+/>
           </span>
           <p className="mt-4 max-w-xl text-sm leading-7 text-brand-primary/82">
             Diseño, construcción y supervisión de obras en Trujillo, Perú. Atención directa por WhatsApp, correo y oficina para proyectos residenciales, comerciales e institucionales.
