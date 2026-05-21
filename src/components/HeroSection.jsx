@@ -58,28 +58,28 @@ const HeroSection = () => {
         <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(10,12,11,0.10)_0%,rgba(10,12,11,0.12)_42%,rgba(10,12,11,0.38)_100%)]" />
       </div>
 
-      <div className="relative section-shell flex min-h-[calc(100svh-5rem)] items-center py-10 lg:py-16">
+      <div className="relative section-shell flex min-h-[calc(100svh-5rem)] items-start py-8 sm:py-10 lg:items-center lg:py-14">
         <motion.div
-          className="max-w-[760px]"
+          className="max-w-[700px] pt-6 sm:pt-8 lg:pt-0"
           initial={{ opacity: 0, y: 22 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
         >
-          <p className="eyebrow mb-5 text-white/85">CyM Centurión & Mendoza Constructora en Trujillo</p>
+          <p className="eyebrow mb-3 text-white/85">CyM Centurión & Mendoza Constructora en Trujillo</p>
 
-          <h1 className="max-w-[11ch] text-[clamp(3.1rem,7vw,6.2rem)] font-semibold leading-[0.93] tracking-[-0.045em] text-[#FAF6EE] drop-shadow-[0_10px_24px_rgba(0,0,0,0.22)]">
+          <h1 className="max-w-[12ch] text-[clamp(2.35rem,5.4vw,4.8rem)] font-semibold leading-[0.95] tracking-[-0.045em] text-[#FAF6EE] drop-shadow-[0_10px_24px_rgba(0,0,0,0.22)]">
             Constructora en Trujillo para diseño, construcción y supervisión.
           </h1>
 
-          <p className="mt-6 max-w-[34rem] text-base leading-7 text-white md:text-xl md:leading-8">
+          <p className="mt-4 max-w-[34rem] text-[0.98rem] leading-7 text-white sm:text-base md:text-lg md:leading-8">
             Diseñamos, construimos y supervisamos proyectos residenciales y comerciales con
             soluciones funcionales, técnicas y de alta calidad para Trujillo y la región.
 </p>
 
-          <div className="mt-8 flex flex-wrap items-center gap-4">
+          <div className="mt-6 flex flex-wrap items-center gap-3 sm:gap-4">
             <a
               href="#contact"
-              className="inline-flex items-center justify-center rounded-full bg-[#F5F1E8] px-6 py-3 text-sm font-semibold text-[#1F2A24] shadow-[0_10px_22px_rgba(0,0,0,0.12)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-white"
+              className="inline-flex items-center justify-center rounded-full bg-[#F5F1E8] px-5 py-3 text-sm font-semibold text-[#1F2A24] shadow-[0_10px_22px_rgba(0,0,0,0.12)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-white sm:px-6"
             >
               Solicitar cotización
               <FiArrowRight className="ml-3" />
@@ -87,7 +87,7 @@ const HeroSection = () => {
 
             <a
               href="#projects"
-              className="inline-flex items-center justify-center rounded-full border border-white/28 bg-transparent px-6 py-3 text-sm font-medium text-white transition-all duration-200 hover:bg-white/10"
+              className="inline-flex items-center justify-center rounded-full border border-white/28 bg-transparent px-5 py-3 text-sm font-medium text-white transition-all duration-200 hover:bg-white/10 sm:px-6"
             >
               Portafolio
             </a>
