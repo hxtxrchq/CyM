@@ -117,12 +117,7 @@ const AlliesSection = () => {
   })
 
   const brands = [
-    {
-      id: 1,
-      name: 'Los Portales',
-      logo: '/images/brands/brand-1.png',
-      size: 'w-[150px] h-[100x] md:w-[190px] md:h-[180px]',
-    },
+    
     {
       id: 2,
       name: 'ECEL Ingeniería & Construcción',

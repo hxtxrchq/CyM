@@ -76,7 +76,7 @@ const Navbar = ({ isScrolled }) => {
             <img
               src={logoSrc}
               alt="CyM Centurión & Mendoza Constructora"
-              className="h-16 w-auto object-contain sm:h-20 md:h-24 transition-all duration-300"
+              className="h-20 w-auto object-contain sm:h-24 md:h-28 transition-all duration-300"
               loading="eager"
               decoding="async"
             />
@@ -111,7 +111,7 @@ const Navbar = ({ isScrolled }) => {
                   : 'border border-white/25 bg-white/10 text-[#F8F4EC] hover:bg-white/15'
               }`}
             >
-              Solicitar cotización <ChevronRight size={15} />
+              Solicitar Presupuesto <ChevronRight size={15} />
             </button>
           </div>
 

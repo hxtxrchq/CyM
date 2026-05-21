@@ -65,15 +65,15 @@ const HeroSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
         >
-          <p className="eyebrow mb-3 text-white/85">CyM Centurión & Mendoza Constructora en Trujillo</p>
+          <p className="eyebrow mb-3 text-white/85">CyM Centurión & Mendoza Constructora</p>
 
           <h1 className="max-w-[12ch] text-[clamp(2.35rem,5.4vw,4.8rem)] font-semibold leading-[0.95] tracking-[-0.045em] text-[#FAF6EE] drop-shadow-[0_10px_24px_rgba(0,0,0,0.22)]">
-            Constructora en Trujillo para diseño, construcción y supervisión.
+            Arquitectura que inspira, ingeniería que trasciende
           </h1>
 
           <p className="mt-4 max-w-[34rem] text-[0.98rem] leading-7 text-white sm:text-base md:text-lg md:leading-8">
             Diseñamos, construimos y supervisamos proyectos residenciales y comerciales con
-            soluciones funcionales, técnicas y de alta calidad para Trujillo y la región.
+            soluciones funcionales, técnicas y de alta calidad para todo el pais.
 </p>
 
           <div className="mt-6 flex flex-wrap items-center gap-3 sm:gap-4">

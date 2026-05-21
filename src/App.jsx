@@ -9,6 +9,7 @@ const ServicesSection = lazy(() => import('./components/ServicesSection'))
 const ProjectsSection = lazy(() => import('./components/ProjectsSection'))
 const FAQSection = lazy(() => import('./components/FAQSection'))
 const ContactSection = lazy(() => import('./components/ContactSection'))
+const LocationSection = lazy(() => import('./components/LocationSection'))
 const WhatsAppButton = lazy(() => import('./components/WhatsAppButton'))
 
 function App() {
@@ -53,6 +54,7 @@ function App() {
           <AlliesSection />
           <FAQSection />
           <ContactSection />
+          <LocationSection />
         </Suspense>
         <Footer />
       </main>

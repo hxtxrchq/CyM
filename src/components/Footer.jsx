@@ -3,11 +3,13 @@ import { motion } from 'framer-motion'
 import { FiMail, FiMapPin, FiPhone } from 'react-icons/fi'
 import facebookLogo from '/images/social/facebook.png'
 import instagramLogo from '/images/social/instagram.png'
+import tiktokLogo from '/images/social/tiktok.png'
 
 const Footer = () => {
   const socialLinks = [
-    { label: 'Facebook', href: 'https://www.facebook.com/', icon: facebookLogo },
-    { label: 'Instagram', href: 'https://www.instagram.com/', icon: instagramLogo },
+    { label: 'Facebook', href: 'https://web.facebook.com/ceymeconstructora', icon: facebookLogo },
+    { label: 'Instagram', href: 'https://www.instagram.com/cym.constructora/?__pwa=1', icon: instagramLogo },
+    { label: 'TikTok', href: 'https://www.tiktok.com/@cym.constructora?is_from_webapp=1&sender_device=pc', icon: tiktokLogo },
   ]
 
   return (
@@ -34,7 +36,6 @@ const Footer = () => {
             <span className="rounded-full border border-brand-primary/10 bg-white/70 px-4 py-2">Construcción</span>
             <span className="rounded-full border border-brand-primary/10 bg-white/70 px-4 py-2">Supervisión</span>
             <span className="rounded-full border border-brand-primary/10 bg-white/70 px-4 py-2">Diseño</span>
-            <span className="rounded-full border border-brand-primary/10 bg-white/70 px-4 py-2">Trujillo</span>
           </div>
 
           <div className="mt-5 flex items-center gap-2">
