@@ -4,20 +4,20 @@ import { useInView } from 'react-intersection-observer'
 import { FiChevronDown } from 'react-icons/fi'
 
 const faqs = [
-  {
-    question: '¿CyM realiza diseño y construcción en Trujillo?',
+   {
+    question: '¿Qué servicios ofrece CyM?',
     answer:
-      'Sí. CyM Centurión & Mendoza Constructora desarrolla diseño arquitectónico, construcción y supervisión de obras en Trujillo, Perú.',
+      'Ofrecemos servicios de diseño, construcción y supervisión de obras para proyectos residenciales, comerciales y otros desarrollos que requieren una ejecución técnica y ordenada.',
   },
   {
-    question: '¿También supervisan obras en Trujillo?',
+    question: '¿Pueden encargarse del diseño y la construcción de un proyecto?',
     answer:
-      'Sí. Ofrecemos supervisión técnica para verificar calidad, seguridad, plazos y cumplimiento del proyecto en obra.',
+      'Sí. Podemos acompañar el proyecto desde la etapa de diseño arquitectónico hasta la ejecución de obra, incluyendo remodelaciones, ampliaciones y coordinación integral según las necesidades del cliente.',
   },
   {
-    question: '¿Cómo solicito una cotización?',
+    question: '¿Realizan supervisión de obra?',
     answer:
-      'Puedes escribir por WhatsApp al +51 957 217 850 o enviar un correo a proyectos@ceymeconstruye.com para recibir una atención directa.',
+      'Sí. Brindamos supervisión técnica para verificar el cumplimiento del diseño, la calidad constructiva, los plazos previstos y las condiciones de seguridad durante la ejecución.',
   },
   {
     question: '¿Dónde está ubicada la oficina?',
