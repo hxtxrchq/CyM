@@ -85,7 +85,7 @@ const ProjectModal = ({ project, open, onClose }) => {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 10, scale: 0.985 }}
             transition={{ duration: 0.24 }}
-            className="relative z-10 w-full max-w-4xl overflow-hidden rounded-[22px] border border-white/10 bg-[#1F2A24] shadow-[0_20px_60px_rgba(0,0,0,0.32)]"
+            className="relative z-10 w-full max-w-3xl max-h-[calc(100vh-2rem)] overflow-hidden rounded-[22px] border border-white/10 bg-[#1F2A24] shadow-[0_20px_60px_rgba(0,0,0,0.32)] md:max-w-4xl"
           >
             <div className="flex items-start justify-between gap-4 px-5 py-4 md:px-6">
               <div className="min-w-0">
@@ -113,7 +113,7 @@ const ProjectModal = ({ project, open, onClose }) => {
               <img
                 src={project.images[index]}
                 alt={`${project.title} en ${project.location}, vista ${index + 1}`}
-                className="h-[300px] w-full object-cover md:h-[520px]"
+                className="h-[220px] w-full object-cover md:h-[360px] lg:h-[420px]"
                 loading="eager"
                 decoding="async"
                 fetchPriority="high"
