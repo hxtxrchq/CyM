@@ -32,6 +32,10 @@ const Navbar = ({ isScrolled }) => {
     ? '/images/header-logo/CyM.png'
     : '/images/header-logo/CyM_white.png'
 
+  const logoClassName = scrolled
+    ? 'h-20 w-auto object-contain sm:h-24 md:h-28 lg:h-32 transition-all duration-300 drop-shadow-[0_1px_2px_rgba(0,0,0,0.10)]'
+    : 'h-20 w-auto object-contain sm:h-24 md:h-28 lg:h-32 transition-all duration-300 drop-shadow-[0_3px_8px_rgba(0,0,0,0.28)]'
+
   const goTo = (href) => {
     const target = document.querySelector(href)
 
@@ -67,7 +71,7 @@ const Navbar = ({ isScrolled }) => {
       />
 
       <div className="section-shell relative z-10">
-        <div className="flex h-20 items-center justify-between gap-4">
+        <div className="flex min-h-24 items-center justify-between gap-4 py-2 md:min-h-28">
           <button
             onClick={() => goTo('#hero')}
             className="group flex items-center text-left"
@@ -76,7 +80,7 @@ const Navbar = ({ isScrolled }) => {
             <img
               src={logoSrc}
               alt="CyM Centurión & Mendoza Constructora"
-              className="h-20 w-auto object-contain sm:h-24 md:h-28 transition-all duration-300"
+              className={logoClassName}
               loading="eager"
               decoding="async"
             />
