@@ -96,19 +96,13 @@ const ProjectModal = ({ project, open, onClose }) => {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 10, scale: 0.985 }}
             transition={{ duration: 0.24 }}
-            className="relative z-10 flex w-full max-w-[840px] max-h-[85vh] flex-col overflow-hidden rounded-[22px] border border-white/10 bg-[#1F2A24] shadow-[0_20px_60px_rgba(0,0,0,0.32)]"
+            className="relative z-10 flex w-full max-w-[840px] max-h-[84vh] flex-col overflow-hidden rounded-[22px] border border-white/10 bg-[#1F2A24] shadow-[0_20px_60px_rgba(0,0,0,0.32)]"
           >
             <div className="flex items-start justify-between gap-4 px-5 py-3 md:px-6 md:py-4">
               <div className="min-w-0">
-                <div className="inline-flex items-center rounded-full border border-[#c9c2ab]/18 bg-[#c9c2ab]/10 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.22em] text-[#ece4d2]">
-                  {project.category}
-                </div>
-                <h3 className="mt-3 text-xl font-semibold leading-tight text-[#F5F1E8] md:text-[1.7rem]">
+                <h3 className="text-xl font-semibold leading-tight text-[#F5F1E8] md:text-[1.7rem]">
                   {project.title}
                 </h3>
-                <p className="mt-2 text-sm uppercase tracking-[0.18em] text-[#C8D0BE]">
-                  Tipo: {project.type}
-                </p>
               </div>
 
               <button
@@ -122,11 +116,11 @@ const ProjectModal = ({ project, open, onClose }) => {
               </button>
             </div>
 
-            <div className="relative shrink-0 bg-[#2D3B34]">
+            <div className="relative shrink-0 bg-[#121713] p-2 md:p-3">
               <img
                 src={currentImage}
                 alt={`${project.title}, vista ${index + 1}`}
-                className="h-[280px] w-full object-cover object-center sm:h-[320px] md:h-[380px] lg:h-[420px]"
+                className="h-[220px] w-full object-contain object-center sm:h-[250px] md:h-[300px] lg:h-[340px]"
                 loading="eager"
                 decoding="async"
                 fetchPriority="high"
@@ -157,10 +151,9 @@ const ProjectModal = ({ project, open, onClose }) => {
                 </>
               )}
 
-              <div className="pointer-events-none absolute inset-x-0 bottom-0 h-[4.5rem] bg-gradient-to-t from-[#1F2A24]/42 to-transparent" />
             </div>
 
-            <div className="flex-1 overflow-y-auto px-5 py-5 md:px-6">
+            <div className="min-h-0 flex-1 overflow-y-auto px-5 py-4 md:px-6 md:py-5">
               <p className="max-w-2xl text-sm leading-7 text-[#F5F1E8]/78 md:text-[15px]">
                 {project.description}
               </p>
