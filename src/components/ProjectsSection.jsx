@@ -166,11 +166,11 @@ const ProjectCard = memo(function ProjectCard({
       onClick={handleClick}
       className="group relative cursor-pointer overflow-hidden rounded-[22px] bg-[#22231d] md:h-[540px]"
     >
-      <div className="relative aspect-[4/5] h-full w-full bg-[#2a2b25] md:aspect-auto">
+      <div className="absolute inset-0 bg-[#2a2b25]">
         <img
           src={project.images[0]}
           alt={project.title}
-          className="h-full w-full object-contain object-center transition-transform duration-500 ease-out group-hover:scale-[1.01]"
+          className="h-full w-full object-cover object-center transition-transform duration-500 ease-out group-hover:scale-[1.02]"
           loading="lazy"
           decoding="async"
           fetchPriority="low"
