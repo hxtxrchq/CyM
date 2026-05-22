@@ -33,8 +33,8 @@ const Navbar = ({ isScrolled }) => {
     : '/images/header-logo/CyM_white.png'
 
   const logoClassName = scrolled
-    ? 'h-20 w-auto object-contain sm:h-24 md:h-28 lg:h-32 transition-all duration-300 drop-shadow-[0_1px_2px_rgba(0,0,0,0.10)]'
-    : 'h-20 w-auto object-contain sm:h-24 md:h-28 lg:h-32 transition-all duration-300 drop-shadow-[0_3px_8px_rgba(0,0,0,0.28)]'
+  ? 'h-10 w-auto object-contain sm:h-12 md:h-16 lg:h-20 transition-all duration-300 drop-shadow-[0_1px_2px_rgba(0,0,0,0.10)]'
+: 'h-10 w-auto object-contain sm:h-12 md:h-16 lg:h-20 transition-all duration-300 drop-shadow-[0_3px_8px_rgba(0,0,0,0.28)]'
 
   const goTo = (href) => {
     const target = document.querySelector(href)

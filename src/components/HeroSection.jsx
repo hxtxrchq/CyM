@@ -84,7 +84,7 @@ const HeroSection = () => {
               href="#contact"
               className="inline-flex items-center justify-center rounded-full bg-[#F5F1E8] px-5 py-3 text-sm font-semibold text-[#1F2A24] shadow-[0_10px_22px_rgba(0,0,0,0.12)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-white sm:px-6"
             >
-              Solicitar cotización
+              Solicitar presupuesto
               <FiArrowRight className="ml-3" />
             </a>
 

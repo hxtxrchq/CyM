@@ -7,10 +7,21 @@ const ProjectModal = lazy(() => import('./ProjectModal'))
 const featuredProjects = [
   {
     title: 'Edificio Multifamiliar IG',
-    location: 'Perú',
-    scope: 'Residencial',
+    category: 'Construcción y diseño',
+    type: 'Construcción y diseño arquitectónico',
     description:
-      'Proyecto residencial integral con diseño arquitectónico, especialidades, interiores y visualización 3D.',
+      'Proyecto integral desarrollado para un edificio multifamiliar. Incluye diseño arquitectónico, especialidades técnicas y visualización 3D con recorrido virtual, con una propuesta funcional y contemporánea.',
+    scope: [
+      'Diseño arquitectónico de edificio multifamiliar.',
+      'Planos de arquitectura.',
+      'Planos de estructuras.',
+      'Estudio de mecánica de suelos.',
+      'Instalaciones eléctricas.',
+      'Instalaciones sanitarias.',
+      'Diseño de interiores.',
+      'Vistas 3D renderizadas.',
+      'Recorrido virtual 3D.',
+    ],
     images: [
       '/images/sections/projects/PROYECTO_EDIFICIO MULTIFAMILIAR IG/principal.png',
       '/images/sections/projects/PROYECTO_EDIFICIO MULTIFAMILIAR IG/3.png',
@@ -26,10 +37,17 @@ const featuredProjects = [
   },
   {
     title: 'Interiorismo Fam. IG',
-    location: 'Perú',
-    scope: 'Interiorismo',
+    category: 'Interiorismo',
+    type: 'Diseño interior y desarrollo técnico',
     description:
-      'Propuesta de interiorismo cálida y ordenada, pensada para mejorar la experiencia del espacio.',
+      'Proyecto enfocado en el diseño de interiores de ambientes de departamento. La propuesta se complementó con planos técnicos e imágenes 3D para definir mejor el resultado final.',
+    scope: [
+      'Diseño de interiores de ambientes de departamento.',
+      'Planos de arquitectura.',
+      'Instalaciones eléctricas.',
+      'Instalaciones sanitarias.',
+      'Vistas 3D renderizadas.',
+    ],
     images: [
       '/images/sections/projects/PROYECTO_INTERIORISMO FAM. IG/principal.png',
       '/images/sections/projects/PROYECTO_INTERIORISMO FAM. IG/PLANO_PLANTA INTERIORISMO FAM. IG.jpeg',
@@ -38,10 +56,17 @@ const featuredProjects = [
   },
   {
     title: 'Diseño de Cocina Aida',
-    location: 'Perú',
-    scope: 'Interiorismo',
+    category: 'Diseño interior',
+    type: 'Diseño interior de cocina',
     description:
-      'Diseño de cocina con materialidad cálida, orden visual y soluciones prácticas para el día a día.',
+      'Proyecto de diseño interior orientado a optimizar la funcionalidad, la distribución y la estética de una cocina residencial. Se desarrolló la propuesta técnica y visual para definir con claridad cada componente del espacio.',
+    scope: [
+      'Diseño de interiores.',
+      'Planos de arquitectura.',
+      'Instalaciones eléctricas.',
+      'Instalaciones sanitarias.',
+      'Vistas 3D renderizadas.',
+    ],
     images: [
       '/images/sections/projects/PROYECTO_DISEÑO COCINA AIDA/principal.jpeg',
       '/images/sections/projects/PROYECTO_DISEÑO COCINA AIDA/1.jpeg',
@@ -55,10 +80,20 @@ const featuredProjects = [
   },
   {
     title: 'Vivienda Unifamiliar J&R',
-    location: 'Perú',
-    scope: 'Residencial',
+    category: 'Construcción y diseño',
+    type: 'Construcción y diseño arquitectónico',
     description:
-      'Vivienda unifamiliar proyectada con criterio arquitectónico, confort y distribución eficiente.',
+      'Proyecto integral para vivienda unifamiliar, desarrollado desde el diseño arquitectónico hasta el planteamiento técnico de especialidades e interiorismo. La propuesta se complementó con visualización 3D y recorrido virtual para representar el resultado final.',
+    scope: [
+      'Diseño arquitectónico de vivienda unifamiliar.',
+      'Planos de arquitectura.',
+      'Planos de estructuras.',
+      'Instalaciones eléctricas.',
+      'Instalaciones sanitarias.',
+      'Diseño de interiores.',
+      'Vistas 3D renderizadas.',
+      'Recorrido virtual 3D.',
+    ],
     images: [
       '/images/sections/projects/PROYECTO_VIVIENDA UNIFAMILIAR J&R/principal.jpeg',
       '/images/sections/projects/PROYECTO_VIVIENDA UNIFAMILIAR J&R/1.jpeg',
@@ -71,11 +106,22 @@ const featuredProjects = [
     ],
   },
   {
-    title: 'Fachada Local Comercial OL',
-    location: 'Av. América Oeste',
-    scope: 'Comercial',
+    title: 'Local Comercial OL',
+    category: 'Construcción comercial',
+    type: 'Construcción y diseño comercial',
     description:
-      'Proyecto comercial con arquitectura, expediente técnico y ejecución de obra civil y acabados.',
+      'Proyecto comercial desarrollado desde la propuesta arquitectónica y técnica hasta la planificación y ejecución de obra. Incluye expediente para municipalidad, gestión de licencia y ejecución civil con acabados.',
+    scope: [
+      'Diseño arquitectónico de edificio comercial.',
+      'Planos de arquitectura.',
+      'Planos de estructuras.',
+      'Instalaciones eléctricas.',
+      'Instalaciones sanitarias.',
+      'Presupuesto y cronograma de obra.',
+      'Expediente para municipalidad.',
+      'Gestión de licencia de construcción.',
+      'Ejecución de obra civil y acabados.',
+    ],
     images: [
       '/images/sections/projects/FACHADA LOCAL COMERCIAL OL/principal.jpeg',
     ],
@@ -118,43 +164,41 @@ const ProjectCard = memo(function ProjectCard({
       animate={inView ? 'visible' : 'hidden'}
       onMouseEnter={handleMouseEnter}
       onClick={handleClick}
-      className="group relative min-h-[380px] cursor-pointer overflow-hidden rounded-[22px] bg-[#22231d] md:min-h-0 md:h-[540px]"
+      className="group relative cursor-pointer overflow-hidden rounded-[22px] bg-[#22231d] md:h-[540px]"
     >
-      <img
-        src={project.images[0]}
-        alt={`${project.title} en ${project.location}`}
-        className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.03]"
-        loading="lazy"
-        decoding="async"
-        fetchPriority="low"
-        width="1200"
-        height="1600"
-        sizes="(min-width: 768px) 24vw, 100vw"
-        style={{ willChange: 'transform' }}
-      />
+      <div className="relative aspect-[4/5] h-full w-full bg-[#2a2b25] md:aspect-auto">
+        <img
+          src={project.images[0]}
+          alt={project.title}
+          className="h-full w-full object-contain object-center transition-transform duration-500 ease-out group-hover:scale-[1.01]"
+          loading="lazy"
+          decoding="async"
+          fetchPriority="low"
+          width="1200"
+          height="1600"
+          sizes="(min-width: 768px) 24vw, 100vw"
+          style={{ willChange: 'transform' }}
+        />
+      </div>
 
-      <div className="absolute inset-0 bg-black/28 transition-opacity duration-300 group-hover:bg-black/42" />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/18 to-black/10" />
+      <div className="absolute inset-0 bg-black/22 transition-opacity duration-300 group-hover:bg-black/32" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/18 to-black/8" />
 
       <div className="absolute right-5 top-5 z-20">
-        <div className="flex h-10 w-10 items-center justify-center rounded-full border border-white/14 bg-white/8 text-white/88 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:bg-white/14">
+        <div className="flex h-10 w-10 items-center justify-center rounded-full border border-white/14 bg-white/8 text-white/88 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:bg-white/12">
           <span className="text-lg leading-none">↗</span>
         </div>
       </div>
 
       <div className="absolute inset-x-0 bottom-0 z-10 p-5 md:p-7">
-        <div
-          className={`transition-all duration-300 ${
-            isActive ? 'translate-y-0 opacity-100' : 'translate-y-2 opacity-[0.92]'
-          }`}
-        >
+        <div className={`transition-all duration-300 ${isActive ? 'translate-y-0 opacity-100' : 'translate-y-2 opacity-[0.92]'}`}>
           <div className="mb-3 flex items-center gap-3">
             <span className="text-[11px] uppercase tracking-[0.28em] text-[#a4ac86]">
               {String(index + 1).padStart(2, '0')}
             </span>
             <span className="h-px w-10 bg-white/20" />
             <span className="text-[11px] uppercase tracking-[0.24em] text-white/58">
-              {project.scope}
+              {project.category}
             </span>
           </div>
 
@@ -162,22 +206,10 @@ const ProjectCard = memo(function ProjectCard({
             {project.title}
           </h3>
 
-          <p className="mt-2 text-sm text-white/70">{project.location}</p>
+          <p className="mt-2 text-sm text-white/70">{project.type}</p>
 
-          <div
-            className={`overflow-hidden transition-all duration-300 ${
-              isActive
-                ? 'mt-4 max-h-64 opacity-100 md:max-h-44'
-                : 'mt-0 max-h-0 opacity-0'
-            }`}
-          >
-            <p className="max-w-sm text-sm leading-6 text-white/78">
-              {project.description}
-            </p>
-
-            <div className="mt-5 inline-flex items-center rounded-full border border-white/28 bg-white/18 px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-white shadow-[0_4px_16px_rgba(0,0,0,0.24)]">
-              Ver galería
-            </div>
+          <div className="mt-4 inline-flex items-center rounded-full border border-white/28 bg-white/18 px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-white shadow-[0_4px_16px_rgba(0,0,0,0.24)]">
+            Ver galería
           </div>
         </div>
       </div>
@@ -239,12 +271,12 @@ const ProjectsSection = () => {
             <div className="eyebrow text-[#a4ac86]">Portafolio</div>
             <div className="mt-4 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
               <div>
-                    <h2 className="text-4xl font-semibold tracking-tight text-[#ebe3d2] md:text-5xl">
-                      Proyectos destacados de construcción y diseño
+                <h2 className="text-4xl font-semibold tracking-tight text-[#ebe3d2] md:text-5xl">
+                  Proyectos destacados de construcción y diseño
                 </h2>
                 <p className="mt-3 max-w-2xl text-sm leading-6 text-white/68 md:text-base">
-                      Una selección curada de proyectos residenciales, interiores y comerciales que
-                      reflejan nuestra experiencia en diseño, construcción y supervisión de obras.
+                  Una selección curada de proyectos residenciales, interiores y comerciales que
+                  reflejan nuestra experiencia en diseño, construcción y supervisión de obras.
                 </p>
               </div>
             </div>

@@ -8,6 +8,7 @@ const ProjectModal = ({ project, open, onClose }) => {
 
   const hasImages = !!project?.images?.length
   const totalImages = project?.images?.length || 0
+  const currentImage = project?.images?.[index]
 
   const next = useCallback(() => {
     if (!hasImages) return
@@ -38,12 +39,22 @@ const ProjectModal = ({ project, open, onClose }) => {
   useEffect(() => {
     if (!open || !project?.images?.length) return
 
-    project.images.forEach((src) => {
+    const sources = [currentImage]
+
+    if (totalImages > 1) {
+      sources.push(project.images[(index + 1) % totalImages])
+      sources.push(project.images[(index - 1 + totalImages) % totalImages])
+    }
+
+    sources
+      .filter(Boolean)
+      .filter((src, sourceIndex, allSources) => allSources.indexOf(src) === sourceIndex)
+      .forEach((src) => {
       const img = new Image()
       img.decoding = 'async'
       img.src = src
-    })
-  }, [open, project])
+      })
+  }, [open, project, currentImage, index, totalImages])
 
   useEffect(() => {
     if (!open) return
@@ -64,7 +75,7 @@ const ProjectModal = ({ project, open, onClose }) => {
     <AnimatePresence mode="wait">
       {open && (
         <motion.div
-          className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-6"
+          className="fixed inset-0 z-[100] flex items-center justify-center p-3 md:p-5"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
@@ -85,17 +96,19 @@ const ProjectModal = ({ project, open, onClose }) => {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 10, scale: 0.985 }}
             transition={{ duration: 0.24 }}
-            className="relative z-10 w-full max-w-3xl max-h-[calc(100vh-2rem)] overflow-hidden rounded-[22px] border border-white/10 bg-[#1F2A24] shadow-[0_20px_60px_rgba(0,0,0,0.32)] md:max-w-4xl"
+            className="relative z-10 flex w-full max-w-[840px] max-h-[85vh] flex-col overflow-hidden rounded-[22px] border border-white/10 bg-[#1F2A24] shadow-[0_20px_60px_rgba(0,0,0,0.32)]"
           >
-            <div className="flex items-start justify-between gap-4 px-5 py-4 md:px-6">
+            <div className="flex items-start justify-between gap-4 px-5 py-3 md:px-6 md:py-4">
               <div className="min-w-0">
-                <div className="text-[11px] uppercase tracking-[0.26em] text-[#AAB39B]">
-                  {project.scope}
+                <div className="inline-flex items-center rounded-full border border-[#c9c2ab]/18 bg-[#c9c2ab]/10 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.22em] text-[#ece4d2]">
+                  {project.category}
                 </div>
-                <h3 className="mt-1 text-xl font-semibold text-[#F5F1E8] md:text-2xl">
+                <h3 className="mt-3 text-xl font-semibold leading-tight text-[#F5F1E8] md:text-[1.7rem]">
                   {project.title}
                 </h3>
-                <p className="mt-1 text-sm text-white/58">{project.location}</p>
+                <p className="mt-2 text-sm uppercase tracking-[0.18em] text-[#C8D0BE]">
+                  Tipo: {project.type}
+                </p>
               </div>
 
               <button
@@ -109,17 +122,17 @@ const ProjectModal = ({ project, open, onClose }) => {
               </button>
             </div>
 
-            <div className="relative bg-[#2D3B34]">
+            <div className="relative shrink-0 bg-[#2D3B34]">
               <img
-                src={project.images[index]}
-                alt={`${project.title} en ${project.location}, vista ${index + 1}`}
-                className="h-[220px] w-full object-cover md:h-[360px] lg:h-[420px]"
+                src={currentImage}
+                alt={`${project.title}, vista ${index + 1}`}
+                className="h-[280px] w-full object-cover object-center sm:h-[320px] md:h-[380px] lg:h-[420px]"
                 loading="eager"
                 decoding="async"
                 fetchPriority="high"
                 width="1400"
                 height="900"
-                sizes="(min-width: 768px) 900px, 100vw"
+                sizes="(min-width: 768px) 820px, 100vw"
               />
 
               {totalImages > 1 && (
@@ -144,22 +157,32 @@ const ProjectModal = ({ project, open, onClose }) => {
                 </>
               )}
 
-              <div className="pointer-events-none absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-[#1F2A24]/45 to-transparent" />
+              <div className="pointer-events-none absolute inset-x-0 bottom-0 h-[4.5rem] bg-gradient-to-t from-[#1F2A24]/42 to-transparent" />
             </div>
 
-            <div className="px-5 py-5 md:px-6">
+            <div className="flex-1 overflow-y-auto px-5 py-5 md:px-6">
               <p className="max-w-2xl text-sm leading-7 text-[#F5F1E8]/78 md:text-[15px]">
                 {project.description}
               </p>
 
-              <div className="mt-4 flex flex-wrap items-center gap-3 text-xs uppercase tracking-[0.16em] text-[#AAB39B]">
-                <span>{project.location}</span>
-                <span className="h-1 w-1 rounded-full bg-[#AAB39B]/40" />
-                <span>{project.scope}</span>
-                <span className="h-1 w-1 rounded-full bg-[#AAB39B]/40" />
-                <span>
-                  {String(index + 1).padStart(2, '0')} / {String(totalImages).padStart(2, '0')}
-                </span>
+              <div className="mt-6">
+                <div className="mb-3 flex items-center justify-between gap-3 text-[11px] uppercase tracking-[0.2em] text-[#AAB39B]">
+                  <span>Alcance</span>
+                  <span>
+                    {String(index + 1).padStart(2, '0')} / {String(totalImages).padStart(2, '0')}
+                  </span>
+                </div>
+
+                <ul className="grid gap-2 sm:grid-cols-2">
+                  {project.scope.map((item) => (
+                    <li
+                      key={item}
+                      className="rounded-2xl border border-white/8 bg-white/[0.03] px-3 py-3 text-sm leading-6 text-[#F5F1E8]/84"
+                    >
+                      {item}
+                    </li>
+                  ))}
+                </ul>
               </div>
             </div>
           </motion.div>
