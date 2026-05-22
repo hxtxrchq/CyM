@@ -1,6 +1,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
+import { FiHome, FiTool, FiPlusSquare, FiShield } from 'react-icons/fi'
 
 const cardVariants = {
   hidden: { opacity: 0, y: 22 },
@@ -42,44 +43,37 @@ const ServicesSection = () => {
 
   const serviceCards = [
     {
-      title: 'Diseño',
-      image: '/images/sections/services/sect1.jpg',
-      intro:
-        'Creamos propuestas arquitectónicas y de interiorismo para proyectos en Trujillo que resuelven necesidades reales con una imagen contemporánea y funcional.',
-      items: [
-        'Diseño arquitectónico',
-        'Remodelación',
-        'Ampliación',
-        'Diseño de interiores',
-        'Planos de arquitectura',
-        'Vistas 3D renderizadas',
-      ],
+      title: 'Remodelación',
+      description:
+        'Renovamos viviendas, edificios y locales con una propuesta funcional, estética y adaptada a nuevas necesidades.',
+      image: '/images/sections/services/sect1.png',
+      icon: FiHome,
     },
     {
       title: 'Construcción',
-      image: '/images/sections/services/sect4.jpg',
-      intro:
-        'Ejecutamos obras en Trujillo con orden técnico, planificación y control para lograr resultados sólidos, eficientes y bien terminados.',
-      items: [
-        'Presupuesto y cronograma de obra',
-        'Expediente municipal',
-        'Gestión de licencia de construcción',
-        'Ejecución de obra civil y acabados',
-      ],
+      description:
+        'Desarrollamos obras residenciales y comerciales con orden técnico, control y una ejecución eficiente.',
+      image: '/images/sections/services/sect2.jpg',
+      icon: FiTool,
+    },
+    {
+      title: 'Ampliación',
+      description:
+        'Optimizamos el crecimiento de espacios existentes para ganar área útil sin perder coherencia ni confort.',
+      image: '/images/sections/services/sect3.jpg',
+      icon: FiPlusSquare,
     },
     {
       title: 'Supervisión',
-      image: '/images/sections/services/sect5.jpg',
-      intro:
-        'Acompañamos la obra para verificar que el diseño, la calidad y los tiempos se cumplan correctamente en cada etapa.',
-      items: [
-        'Supervisión de cumplimiento del diseño',
-        'Supervisión de calidad constructiva',
-        'Supervisión de plazos',
-        'Supervisión de seguridad en obra',
-      ],
+      description:
+        'Controlamos calidad, seguridad, plazos y cumplimiento técnico durante toda la ejecución de obra.',
+      image: '/images/sections/services/sect4.jpg',
+      icon: FiShield,
     },
   ]
+
+  const leftServices = serviceCards.slice(0, 2)
+  const rightServices = serviceCards.slice(2)
 
   return (
     <section id="services" className="section-gap bg-white text-[#2f352b] scroll-mt-24 md:scroll-mt-28 relative overflow-hidden">
@@ -107,50 +101,115 @@ const ServicesSection = () => {
         >
           <div className="mb-12">
             <motion.h2 className="text-4xl md:text-5xl font-semibold leading-none" variants={itemVariants}>
-              Diseño, construcción y supervisión de obras en Trujillo
+              Diseño, construcción y supervisión de obras
             </motion.h2>
             <motion.p className="mt-4 max-w-2xl text-brand-primary/80" variants={itemVariants}>
-              Acompañamos cada proyecto con una visión integral, desde la idea inicial hasta la ejecución y supervisión final en Trujillo, Perú.
+              Acompañamos cada proyecto con una visión integral, desde la idea inicial hasta la ejecución final.
             </motion.p>
           </div>
 
-          <div className="grid gap-6 lg:grid-cols-3">
-            {serviceCards.map((service, index) => (
-              <motion.article
-                key={service.title}
-                custom={index}
-                variants={cardVariants}
-                className="group card-soft relative overflow-hidden bg-white/94 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_24px_60px_rgba(10,10,10,0.10)]"
-              >
-                <div className="relative h-44 overflow-hidden">
+          <div className="grid items-center gap-8 xl:grid-cols-[minmax(0,1fr)_minmax(320px,460px)_minmax(0,1fr)]">
+            <div className="grid gap-6">
+              {leftServices.map((service, index) => (
+                <motion.article
+                  key={service.title}
+                  custom={index}
+                  variants={cardVariants}
+                  className="group card-soft relative overflow-hidden bg-white/94 p-6 shadow-[0_10px_30px_rgba(10,10,10,0.05)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_24px_60px_rgba(10,10,10,0.10)]"
+                >
+                  <div className="flex items-start gap-4">
+                    <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-brand-mid/18 text-brand-primary">
+                      <service.icon size={26} />
+                    </div>
+                    <div className="min-w-0">
+                      <h3 className="text-2xl font-semibold text-brand-primary">{service.title}</h3>
+                      <p className="mt-3 text-sm leading-7 text-brand-primary/82">{service.description}</p>
+                    </div>
+                  </div>
                   <img
                     src={service.image}
-                    alt={`${service.title} en Trujillo`}
-                    className="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+                    alt={service.title}
+                    className="mt-5 h-40 w-full rounded-[20px] object-cover"
                     loading="lazy"
                     decoding="async"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#1F2A24]/78 via-[#1F2A24]/30 to-transparent" />
-                  <div className="absolute left-4 top-4 text-[11px] font-semibold uppercase tracking-[0.26em] text-[#F8F4EC]/90">
-                    0{index + 1}
+                </motion.article>
+              ))}
+            </div>
+
+            <motion.div variants={cardVariants} custom={0} className="relative mx-auto w-full max-w-[460px]">
+              <div className="relative overflow-hidden rounded-[42px] border border-brand-primary/10 bg-[#f8f4ea] p-4 shadow-[0_24px_70px_rgba(10,10,10,0.12)]">
+                <div className="grid grid-cols-2 gap-3 overflow-hidden rounded-[32px] bg-white p-3">
+                  {serviceCards.map((service) => (
+                    <div key={service.title} className="relative aspect-[4/5] overflow-hidden rounded-[24px]">
+                      <img
+                        src={service.image}
+                        alt={service.title}
+                        className="h-full w-full object-cover"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#1F2A24]/35 via-transparent to-transparent" />
+                      <div className="absolute bottom-3 left-3 right-3 rounded-full bg-white/90 px-3 py-2 text-center text-[11px] font-semibold uppercase tracking-[0.18em] text-brand-primary shadow-[0_8px_20px_rgba(10,10,10,0.10)]">
+                        {service.title}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="pointer-events-none absolute -left-5 -top-6 h-28 w-28 rounded-full border border-white/80 bg-[#4f4b24] text-white shadow-[0_16px_40px_rgba(10,10,10,0.18)]">
+                  <div className="flex h-full flex-col items-center justify-center text-center">
+                    <span className="text-4xl font-semibold leading-none">+15</span>
+                    <span className="mt-1 text-[13px] font-semibold uppercase leading-none tracking-[0.12em]">
+                      diseños
+                    </span>
+                    <span className="text-[13px] font-semibold uppercase leading-none tracking-[0.12em]">
+                      realizados
+                    </span>
                   </div>
                 </div>
 
-                <div className="p-6 md:p-7">
-                  <h3 className="text-2xl font-semibold text-brand-primary">{service.title}</h3>
-                  <p className="mt-4 text-sm leading-7 text-brand-primary/82">{service.intro}</p>
-
-                  <ul className="mt-6 grid gap-3 text-sm text-brand-primary/86">
-                    {service.items.map((item) => (
-                      <li key={item} className="flex items-start gap-3 leading-6">
-                        <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand-mid" />
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
+                <div className="pointer-events-none absolute -bottom-5 -right-5 h-32 w-32 rounded-full border border-white/80 bg-[#efe2c0] text-brand-primary shadow-[0_16px_40px_rgba(10,10,10,0.14)]">
+                  <div className="flex h-full flex-col items-center justify-center text-center">
+                    <span className="text-4xl font-semibold leading-none">+10</span>
+                    <span className="mt-1 text-[11px] font-semibold uppercase leading-none tracking-[0.12em]">
+                      construcciones
+                    </span>
+                    <span className="text-[11px] font-semibold uppercase leading-none tracking-[0.12em]">
+                      realizadas
+                    </span>
+                  </div>
                 </div>
-              </motion.article>
-            ))}
+              </div>
+            </motion.div>
+
+            <div className="grid gap-6">
+              {rightServices.map((service, index) => (
+                <motion.article
+                  key={service.title}
+                  custom={index + 2}
+                  variants={cardVariants}
+                  className="group card-soft relative overflow-hidden bg-white/94 p-6 shadow-[0_10px_30px_rgba(10,10,10,0.05)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_24px_60px_rgba(10,10,10,0.10)]"
+                >
+                  <div className="flex items-start gap-4">
+                    <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-brand-mid/18 text-brand-primary">
+                      <service.icon size={26} />
+                    </div>
+                    <div className="min-w-0">
+                      <h3 className="text-2xl font-semibold text-brand-primary">{service.title}</h3>
+                      <p className="mt-3 text-sm leading-7 text-brand-primary/82">{service.description}</p>
+                    </div>
+                  </div>
+                  <img
+                    src={service.image}
+                    alt={service.title}
+                    className="mt-5 h-40 w-full rounded-[20px] object-cover"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </motion.article>
+              ))}
+            </div>
           </div>
         </motion.div>
       </div>

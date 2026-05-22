@@ -54,20 +54,20 @@ const AboutSection = () => {
             <div className="relative">
               <div className="rounded-2xl overflow-hidden">
                 <img
-                  src="/images/sections/about/about1.jpg"
-                  alt="Proyectos de construcción y diseño en Trujillo"
-                  className="w-full h-[520px] object-cover"
-                  loading="lazy"
-                />
+  src="/images/sections/about/about1.jpeg"
+  alt="Proyectos de construcción y diseño"
+  className="h-[520px] w-full object-cover object-[50%_30%]"
+  loading="lazy"
+/>
               </div>
             </div>
 
             <div className="relative">
               <div className="bg-white rounded-2xl shadow-xl p-10 md:p-12">
                 <div className="text-sm uppercase tracking-widest text-brand-mid font-semibold">Sobre CyM</div>
-                <h2 className="mt-4 text-3xl md:text-4xl font-semibold text-brand-primary leading-tight">CyM Centurión & Mendoza: diseño y construcción en Trujillo</h2>
+                <h2 className="mt-4 text-3xl md:text-4xl font-semibold text-brand-primary leading-tight">CyM Centurión & Mendoza: diseño y construcción</h2>
                 <p className="mt-6 text-brand-primary/85 leading-7 text-[15px] md:text-base">
-                  En CyM nos especializamos en diseño, construcción y supervisión de obras en Trujillo, creando espacios funcionales, estéticos y de alta calidad. Integramos creatividad, técnica y compromiso para ofrecer soluciones integrales que responden a las necesidades de cada cliente.
+                  En CyM nos especializamos en diseño, construcción y supervisión de obras, creando espacios funcionales, estéticos y de alta calidad. Integramos creatividad, técnica y compromiso para ofrecer soluciones integrales que responden a las necesidades de cada cliente.
                 </p>
                 <div className="mt-6">
                   <a href="#projects" className="inline-flex items-center rounded-md bg-brand-mid text-brand-light px-6 py-3 text-sm font-semibold shadow">Ver proyectos</a>

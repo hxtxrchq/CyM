@@ -138,13 +138,13 @@ const AlliesSection = () => {
     },
     {
       id: 5,
-      name: 'Corte Superior de Justicia de La Libertad',
+      name: 'Corte Superior de Justicia',
       logo: '/images/brands/brand-5.png',
       size: 'w-[145px] h-[100px] md:w-[210px] md:h-[140px]',
     },
     {
       id: 6,
-      name: 'UCT Universidad Católica de Trujillo',
+      name: 'UCT Universidad Católica',
       logo: '/images/brands/brand-6.png',
       size: 'w-[135px] h-[70px] md:w-[200px] md:h-[90px]',
     },

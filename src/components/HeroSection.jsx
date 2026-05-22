@@ -4,16 +4,19 @@ import { FiArrowRight } from 'react-icons/fi'
 
 const slides = [
   {
-    src: '/images/sections/hero/photo1.jpg',
-    alt: 'Proyecto residencial en Trujillo para diseño y construcción',
+    src: '/images/sections/hero/photo1.jpeg',
+    alt: 'Proyecto residencial para diseño y construcción',
+    className: 'object-cover object-center',
   },
   {
-    src: '/images/sections/hero/photo2.jpg',
-    alt: 'Diseño interior y arquitectura de una constructora en Trujillo',
+    src: '/images/sections/hero/photo2.jpeg',
+    alt: 'Diseño interior y arquitectura de una constructora',
+    className: 'object-cover object-[50%_15%]',
   },
   {
-    src: '/images/sections/hero/photo3.jpg',
-    alt: 'Supervisión de obras en Trujillo para proyectos de construcción',
+    src: '/images/sections/hero/photo3.jpeg',
+    alt: 'Supervisión de obras para proyectos de construcción',
+    className: 'object-cover object-[50%_10%]',
   },
 ]
 

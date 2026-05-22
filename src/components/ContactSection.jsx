@@ -13,7 +13,7 @@ const ContactSection = () => {
     { icon: FiPhone, label: 'Teléfono', value: '957 217 850', link: 'tel:+51957217850' },
     { icon: FiMail, label: 'Correo', value: 'ecenturion@ceymeconstruye.com', link: 'mailto:ecenturion@ceymeconstruye.com' },
     { icon: FiMail, label: 'Proyectos', value: 'proyectos@ceymeconstruye.com', link: 'mailto:proyectos@ceymeconstruye.com' },
-    { icon: FiMapPin, label: 'Oficina', value: 'Av. Los Colibríes Mz. P Lt. 11, 2do piso, oficina 23, Trujillo', link: 'https://www.google.com/maps/search/?api=1&query=Av.%20Los%20Colibr%C3%ADes%20Mz.%20P%20Lt.%2011%2C%202do%20piso%2C%20oficina%2023%2C%20Trujillo' },
+    { icon: FiMapPin, label: 'Oficina', value: 'Av. Los Colibríes Mz. P Lt. 11, 2do piso, oficina 23', link: 'https://www.google.com/maps/search/?api=1&query=Av.%20Los%20Colibr%C3%ADes%20Mz.%20P%20Lt.%2011%2C%202do%20piso%2C%20oficina%2023' },
   ]
 
   const socials = [
@@ -52,7 +52,7 @@ const ContactSection = () => {
             <div className="relative z-10 flex flex-col h-full justify-center">
               <div className="eyebrow mb-6 text-brand-mid">Contacto</div>
               <h2 className="text-4xl md:text-5xl font-semibold text-brand-primary leading-[1.1] mb-6">
-                Cotiza con nuestra constructora en Trujillo
+                Cotiza con nuestra constructora
               </h2>
               <p className="max-w-md text-base leading-relaxed text-brand-mid mb-10">
                 Completa el formulario y nos pondremos en contacto para brindarte una propuesta personalizada de diseño, construcción o supervisión.

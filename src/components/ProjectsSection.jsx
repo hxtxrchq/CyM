@@ -7,74 +7,77 @@ const ProjectModal = lazy(() => import('./ProjectModal'))
 const featuredProjects = [
   {
     title: 'Edificio Multifamiliar IG',
-    location: 'Trujillo, Perú',
+    location: 'Perú',
     scope: 'Residencial',
     description:
       'Proyecto residencial integral con diseño arquitectónico, especialidades, interiores y visualización 3D.',
     images: [
-      '/images/sections/projects/project1/proj1_1.jpg',
-      '/images/sections/projects/project1/proj1_2.jpg',
-      '/images/sections/projects/project1/proj1_3.jpg',
+      '/images/sections/projects/PROYECTO_EDIFICIO MULTIFAMILIAR IG/principal.png',
+      '/images/sections/projects/PROYECTO_EDIFICIO MULTIFAMILIAR IG/3.png',
+      '/images/sections/projects/PROYECTO_EDIFICIO MULTIFAMILIAR IG/4.png',
+      '/images/sections/projects/PROYECTO_EDIFICIO MULTIFAMILIAR IG/6.jpg',
+      '/images/sections/projects/PROYECTO_EDIFICIO MULTIFAMILIAR IG/7.jpg',
+      '/images/sections/projects/PROYECTO_EDIFICIO MULTIFAMILIAR IG/8.jpg',
+      '/images/sections/projects/PROYECTO_EDIFICIO MULTIFAMILIAR IG/9.jpg',
+      '/images/sections/projects/PROYECTO_EDIFICIO MULTIFAMILIAR IG/10.jpg',
+      '/images/sections/projects/PROYECTO_EDIFICIO MULTIFAMILIAR IG/11.jpg',
+      '/images/sections/projects/PROYECTO_EDIFICIO MULTIFAMILIAR IG/12.jpg',
     ],
   },
   {
     title: 'Interiorismo Fam. IG',
-    location: 'Trujillo, Perú',
+    location: 'Perú',
     scope: 'Interiorismo',
     description:
       'Propuesta de interiorismo cálida y ordenada, pensada para mejorar la experiencia del espacio.',
     images: [
-      '/images/sections/projects/project3/proj3_1.jpg',
-      '/images/sections/projects/project3/proj3_2.jpg',
-      '/images/sections/projects/project3/proj3_3.jpg',
+      '/images/sections/projects/PROYECTO_INTERIORISMO FAM. IG/principal.png',
+      '/images/sections/projects/PROYECTO_INTERIORISMO FAM. IG/PLANO_PLANTA INTERIORISMO FAM. IG.jpeg',
+      '/images/sections/projects/PROYECTO_INTERIORISMO FAM. IG/INTERIORISMO FAM. IG 01.jpeg',
     ],
   },
   {
     title: 'Diseño de Cocina Aida',
-    location: 'Trujillo, Perú',
+    location: 'Perú',
     scope: 'Interiorismo',
     description:
       'Diseño de cocina con materialidad cálida, orden visual y soluciones prácticas para el día a día.',
     images: [
-      '/images/sections/projects/project3/proj3_1.jpg',
-      '/images/sections/projects/project3/proj3_2.jpg',
-      '/images/sections/projects/project3/proj3_3.jpg',
+      '/images/sections/projects/PROYECTO_DISEÑO COCINA AIDA/principal.jpeg',
+      '/images/sections/projects/PROYECTO_DISEÑO COCINA AIDA/1.jpeg',
+      '/images/sections/projects/PROYECTO_DISEÑO COCINA AIDA/2.jpeg',
+      '/images/sections/projects/PROYECTO_DISEÑO COCINA AIDA/3.jpeg',
+      '/images/sections/projects/PROYECTO_DISEÑO COCINA AIDA/4.jpeg',
+      '/images/sections/projects/PROYECTO_DISEÑO COCINA AIDA/5.jpeg',
+      '/images/sections/projects/PROYECTO_DISEÑO COCINA AIDA/6.jpeg',
+      '/images/sections/projects/PROYECTO_DISEÑO COCINA AIDA/7.jpeg',
     ],
   },
   {
-    title: 'Vivienda Unifamiliar JR',
-    location: 'Trujillo, Perú',
+    title: 'Vivienda Unifamiliar J&R',
+    location: 'Perú',
     scope: 'Residencial',
     description:
       'Vivienda unifamiliar proyectada con criterio arquitectónico, confort y distribución eficiente.',
     images: [
-      '/images/sections/projects/project1/proj1_1.jpg',
-      '/images/sections/projects/project1/proj1_2.jpg',
-      '/images/sections/projects/project1/proj1_3.jpg',
+      '/images/sections/projects/PROYECTO_VIVIENDA UNIFAMILIAR J&R/principal.jpeg',
+      '/images/sections/projects/PROYECTO_VIVIENDA UNIFAMILIAR J&R/1.jpeg',
+      '/images/sections/projects/PROYECTO_VIVIENDA UNIFAMILIAR J&R/2.jpeg',
+      '/images/sections/projects/PROYECTO_VIVIENDA UNIFAMILIAR J&R/3.jpeg',
+      '/images/sections/projects/PROYECTO_VIVIENDA UNIFAMILIAR J&R/4.jpeg',
+      '/images/sections/projects/PROYECTO_VIVIENDA UNIFAMILIAR J&R/5.jpeg',
+      '/images/sections/projects/PROYECTO_VIVIENDA UNIFAMILIAR J&R/6.jpeg',
+      '/images/sections/projects/PROYECTO_VIVIENDA UNIFAMILIAR J&R/7.jpeg',
     ],
   },
   {
-    title: 'Estudio Contable D.M. – Trujillo',
-    location: 'Trujillo, Perú',
-    scope: 'Remodelación',
-    description:
-      'Remodelación de oficinas con enfoque funcional, interiorismo y soluciones técnicas bien resueltas.',
-    images: [
-      '/images/sections/projects/project2/proj2_1.jpg',
-      '/images/sections/projects/project2/proj2_2.jpg',
-      '/images/sections/projects/project2/proj2_3.jpg',
-    ],
-  },
-  {
-    title: 'Construcción de Local Comercial OL – Av. América Oeste, Trujillo',
-    location: 'Av. América Oeste, Trujillo, Perú',
+    title: 'Fachada Local Comercial OL',
+    location: 'Av. América Oeste',
     scope: 'Comercial',
     description:
       'Proyecto comercial con arquitectura, expediente técnico y ejecución de obra civil y acabados.',
     images: [
-      '/images/sections/projects/project4/proj4_1.jpg',
-      '/images/sections/projects/project4/proj4_2.jpg',
-      '/images/sections/projects/project4/proj4_3.jpg',
+      '/images/sections/projects/FACHADA LOCAL COMERCIAL OL/principal.jpeg',
     ],
   },
 ]
@@ -237,11 +240,11 @@ const ProjectsSection = () => {
             <div className="mt-4 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
               <div>
                     <h2 className="text-4xl font-semibold tracking-tight text-[#ebe3d2] md:text-5xl">
-                      Proyectos destacados de construcción y diseño en Trujillo
+                      Proyectos destacados de construcción y diseño
                 </h2>
                 <p className="mt-3 max-w-2xl text-sm leading-6 text-white/68 md:text-base">
                       Una selección curada de proyectos residenciales, interiores y comerciales que
-                      reflejan nuestra experiencia en diseño, construcción y supervisión de obras en Trujillo.
+                      reflejan nuestra experiencia en diseño, construcción y supervisión de obras.
                 </p>
               </div>
             </div>

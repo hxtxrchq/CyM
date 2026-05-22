@@ -1,12 +1,12 @@
 CyM Centurión & Mendoza Constructora – Landing Page SEO
 
-Landing page desarrollada para CyM Centurión & Mendoza Constructora, enfocada en diseño, construcción y supervisión de obras en Trujillo.
+Landing page desarrollada para CyM Centurión & Mendoza Constructora, enfocada en diseño, construcción y supervisión de obras.
 
 🎯 Descripcion del Proyecto
 
 Este proyecto consiste en una landing page optimizada, orientada a comunicar el enfoque técnico, local y comercial de CyM / CEyME.
 
-El sitio está diseñado para posicionar búsquedas como constructora en Trujillo, diseño y construcción en Trujillo y supervisión de obras en Trujillo.
+El sitio está diseñado para posicionar búsquedas relacionadas con constructora, diseño y construcción y supervisión de obras.
 
 🎨 Caracteristicas
 Diseno editorial, calido y sofisticado

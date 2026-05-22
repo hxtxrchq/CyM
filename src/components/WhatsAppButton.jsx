@@ -5,7 +5,7 @@ import whatsappLogo from '/images/social/whatsapp.png'
 const WhatsAppButton = () => {
   const [showHint, setShowHint] = useState(false)
   const phoneNumber = '51957217850'
-  const whatsappLink = `https://wa.me/${phoneNumber}?text=Hola%20CyM,%20quiero%20una%20cotizaci%C3%B3n%20para%20un%20proyecto%20en%20Trujillo.`
+  const whatsappLink = `https://wa.me/${phoneNumber}?text=Hola%20CyM,%20quiero%20una%20cotizaci%C3%B3n%20para%20un%20proyecto.`
 
   useEffect(() => {
     const revealHint = () => {
@@ -34,7 +34,7 @@ const WhatsAppButton = () => {
               transition={{ duration: 0.3 }}
               className="pointer-events-none absolute right-full top-[44%] mr-3 w-[min(240px,calc(100vw-6.5rem))] -translate-y-1/2 rounded-2xl border border-[#8D9571]/35 bg-[#F5F1E8] px-4 py-3 text-[13px] leading-5 text-[#2F352B] shadow-[0_12px_28px_rgba(0,0,0,0.14)]"
             >
-              Escríbenos por WhatsApp para cotizar tu obra en Trujillo.
+              Escríbenos por WhatsApp para cotizar tu obra.
             </motion.div>
           )}
         </AnimatePresence>

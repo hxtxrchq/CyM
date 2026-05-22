@@ -22,7 +22,7 @@ const faqs = [
   {
     question: '¿Dónde está ubicada la oficina?',
     answer:
-      'La oficina está en Av. Los Colibríes Mz. P Lt. 11, 2do piso, oficina 23, Trujillo, Perú.',
+      'La oficina está en Av. Los Colibríes Mz. P Lt. 11, 2do piso, oficina 23.',
   },
 ]
 
@@ -40,10 +40,10 @@ const FAQSection = () => {
           <div className="max-w-2xl">
             <div className="eyebrow">FAQ SEO</div>
             <h2 className="mt-4 text-4xl font-semibold leading-none md:text-5xl">
-              Preguntas frecuentes sobre constructora en Trujillo
+              Preguntas frecuentes sobre constructora
             </h2>
             <p className="mt-4 text-brand-primary/78 leading-7">
-              Resolvemos las consultas más comunes sobre diseño, construcción y supervisión de obras en Trujillo para facilitar la decisión de nuevos clientes.
+              Resolvemos las consultas más comunes sobre diseño, construcción y supervisión de obras para facilitar la decisión de nuevos clientes.
             </p>
           </div>
 

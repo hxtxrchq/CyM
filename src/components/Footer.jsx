@@ -29,7 +29,7 @@ const Footer = () => {
 />
           </span>
           <p className="mt-4 max-w-xl text-sm leading-7 text-brand-primary/82">
-            Diseño, construcción y supervisión de obras en Trujillo, Perú. Atención directa por WhatsApp, correo y oficina para proyectos residenciales, comerciales e institucionales.
+            Diseño, construcción y supervisión de obras. Atención directa por WhatsApp, correo y oficina para proyectos residenciales, comerciales e institucionales.
           </p>
 
           <div className="mt-6 flex flex-wrap gap-3 text-xs uppercase tracking-[0.14em] text-brand-mid">
@@ -75,9 +75,9 @@ const Footer = () => {
             <FiMail className="shrink-0" />
             <span>proyectos@ceymeconstruye.com</span>
           </a>
-          <a href="https://www.google.com/maps/search/?api=1&query=Av.%20Los%20Colibr%C3%ADes%20Mz.%20P%20Lt.%2011%2C%202do%20piso%2C%20oficina%2023%2C%20Trujillo" target="_blank" rel="noreferrer" className="flex items-start gap-3 text-sm text-brand-primary transition-colors hover:text-brand-mid">
+          <a href="https://www.google.com/maps/search/?api=1&query=Av.%20Los%20Colibr%C3%ADes%20Mz.%20P%20Lt.%2011%2C%202do%20piso%2C%20oficina%2023" target="_blank" rel="noreferrer" className="flex items-start gap-3 text-sm text-brand-primary transition-colors hover:text-brand-mid">
             <FiMapPin className="mt-0.5 shrink-0" />
-            <span>Av. Los Colibríes Mz. P Lt. 11, 2do piso, oficina 23, Trujillo</span>
+            <span>Av. Los Colibríes Mz. P Lt. 11, 2do piso, oficina 23</span>
           </a>
         </motion.div>
       </div>
