@@ -15,18 +15,18 @@ const Footer = () => {
   return (
     <footer className="relative overflow-hidden border-t border-brand-primary/8 bg-[#F4EEE3] py-12">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(115,122,93,0.12),transparent_34%),linear-gradient(180deg,rgba(255,255,255,0.55),rgba(244,238,227,1))]" />
-      <div className="relative section-shell grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-end">
+      <div className="relative section-shell grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
         <motion.div initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-          <span className="block h-16 w-52 overflow-hidden">
+          <span className="block h-12 w-36 -ml-6 overflow-hidden sm:h-14 sm:w-44 md:h-16 md:w-52 lg:-ml-0">
             <img
-  src="/images/header-logo/CyM.png"
-  alt="CyM Centurión & Mendoza Constructora"
-  className="h-full w-20 origin-left object-contain scale-[2.1] -translate-x-12"
-  width="200"
-  height="150"
-  loading="eager"
-  decoding="async"
-/>
+              src="/images/header-logo/CyM.png"
+              alt="CyM Centurión & Mendoza Constructora"
+              className="h-full w-full object-contain object-left"
+              width="220"
+              height="140"
+              loading="eager"
+              decoding="async"
+            />
           </span>
           <p className="mt-4 max-w-xl text-sm leading-7 text-brand-primary/82">
             Diseño, construcción y supervisión de obras. Atención directa por WhatsApp, correo y oficina para proyectos residenciales, comerciales e institucionales.

@@ -1,13 +1,85 @@
-import React from 'react'
+import React, { useMemo, useState } from 'react'
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
-import { FiMail, FiPhone, FiMapPin, FiArrowRight } from 'react-icons/fi'
+import { FiAlertCircle, FiCheckCircle, FiLoader, FiMail, FiPhone, FiMapPin, FiArrowRight } from 'react-icons/fi'
 import facebookLogo from '/images/social/facebook.png'
 import instagramLogo from '/images/social/instagram.png'
 import tiktokLogo from '/images/social/tiktok.png'
 
+const formspreeEndpoint = 'https://formspree.io/f/mlgvnpvq'
+
 const ContactSection = () => {
   const { ref, inView } = useInView({ threshold: 0.2, triggerOnce: true })
+  const [formData, setFormData] = useState({
+    name: '',
+    company: '',
+    email: '',
+    phone: '',
+    message: '',
+  })
+  const [status, setStatus] = useState('idle')
+  const [feedback, setFeedback] = useState('')
+
+  const canSubmit = useMemo(
+    () => formData.name.trim() && formData.company.trim() && formData.email.trim() && formData.phone.trim() && formData.message.trim(),
+    [formData]
+  )
+
+  const handleChange = (event) => {
+    const { name, value } = event.target
+    setFormData((current) => ({ ...current, [name]: value }))
+  }
+
+  const handleSubmit = async (event) => {
+    event.preventDefault()
+
+    if (!canSubmit || status === 'submitting') return
+
+    setStatus('submitting')
+    setFeedback('')
+
+    const structuredMessage = `Nuevo mensaje desde CyM Perú\n\nNombre: ${formData.name}\nEmpresa: ${formData.company}\nCorreo: ${formData.email}\nTeléfono: ${formData.phone}\n\nServicios de interés:\n${formData.message}`
+
+    const payload = {
+      _subject: 'Nuevo lead desde CyM Perú',
+      company_identifier: 'CyM',
+      name: formData.name,
+      company: formData.company,
+      email: formData.email,
+      phone: formData.phone,
+      message: structuredMessage,
+    }
+
+    try {
+      const response = await fetch(formspreeEndpoint, {
+        method: 'POST',
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(payload),
+      })
+
+      const result = await response.json().catch(() => null)
+
+      if (!response.ok) {
+        throw new Error(result?.error || 'No se pudo enviar el formulario.')
+      }
+
+      setStatus('success')
+      setFeedback('Tu mensaje fue enviado. Te responderemos pronto.')
+      setFormData({
+        name: '',
+        company: '',
+        email: '',
+        phone: '',
+        message: '',
+      })
+    } catch (error) {
+      setStatus('error')
+      setFeedback(error.message || 'Ocurrió un error al enviar el formulario.')
+    }
+  }
 
   const details = [
     { icon: FiPhone, label: 'Teléfono', value: '957 217 850', link: 'tel:+51957217850' },
@@ -130,49 +202,117 @@ const ContactSection = () => {
             />
             <div className="absolute inset-0 bg-gradient-to-b from-white/85 via-white/92 to-white" />
             <div className="relative z-10">
-            <div className="grid gap-7">
-              <div className="grid gap-3">
-                <label className="text-[11px] uppercase tracking-[0.3em] text-brand-mid font-bold ml-1.5">Nombre completo</label>
-                <input
-                  className="w-full rounded-2xl border border-brand-soft/30 bg-brand-light/50 px-7 py-5 text-brand-primary outline-none transition-all placeholder:text-brand-mid/40 focus:border-brand-mid/60 focus:bg-white focus:ring-1 focus:ring-brand-mid/20 text-base"
-                  placeholder="Escribe tu nombre y apellidos"
-                />
-              </div>
-              <div className="grid gap-3">
-                <label className="text-[11px] uppercase tracking-[0.3em] text-brand-mid font-bold ml-1.5">Empresa</label>
-                <input
-                  className="w-full rounded-2xl border border-brand-soft/30 bg-brand-light/50 px-7 py-5 text-brand-primary outline-none transition-all placeholder:text-brand-mid/40 focus:border-brand-mid/60 focus:bg-white focus:ring-1 focus:ring-brand-mid/20 text-base"
-                  placeholder="Nombre de tu organización"
-                />
-              </div>
-              <div className="grid gap-3">
-                <label className="text-[11px] uppercase tracking-[0.3em] text-brand-mid font-bold ml-1.5">Correo electrónico</label>
-                <input
-                  className="w-full rounded-2xl border border-brand-soft/30 bg-brand-light/50 px-7 py-5 text-brand-primary outline-none transition-all placeholder:text-brand-mid/40 focus:border-brand-mid/60 focus:bg-white focus:ring-1 focus:ring-brand-mid/20 text-base"
-                  placeholder="tu@email.com"
-                  type="email"
-                />
-              </div>
-              
-              <div className="grid gap-3">
-                <label className="text-[11px] uppercase tracking-[0.3em] text-brand-mid font-bold ml-1.5">Descripción</label>
-                <textarea
-                  rows="4"
-                  className="w-full rounded-2xl border border-brand-soft/30 bg-brand-light/50 px-7 py-5 text-brand-primary outline-none transition-all placeholder:text-brand-mid/40 focus:border-brand-mid/60 focus:bg-white resize-none focus:ring-1 focus:ring-brand-mid/20 text-base"
-                  placeholder="Cuéntanos brevemente sobre tu proyecto"
-                />
-              </div>
-            </div>
+              <form className="grid gap-7" onSubmit={handleSubmit} noValidate>
+                <input type="hidden" name="_subject" value="Nuevo lead desde CyM Perú" />
+                <input type="hidden" name="company_identifier" value="CyM" />
 
-              <div className="mt-10 flex flex-col gap-4">
-              <button className="inline-flex items-center justify-center rounded-full bg-brand-primary text-brand-light px-8 py-5 text-[13px] font-black uppercase tracking-widest transition-all duration-500 hover:-translate-y-1.5 shadow-md w-full">
-                ENVIAR SOLICITUD
-                <FiArrowRight className="ml-3" />
-              </button>
-              <p className="text-center text-[9px] uppercase tracking-[0.4em] text-brand-mid/70">
-                Respuesta garantizada en menos de 24 horas
-              </p>
-            </div>
+                {feedback ? (
+                  <div
+                    className={`flex items-start gap-3 rounded-2xl border px-4 py-4 text-sm leading-6 ${
+                      status === 'success'
+                        ? 'border-emerald-200 bg-emerald-50 text-emerald-900'
+                        : 'border-rose-200 bg-rose-50 text-rose-900'
+                    }`}
+                    role="status"
+                    aria-live="polite"
+                  >
+                    {status === 'success' ? <FiCheckCircle size={18} className="mt-0.5 shrink-0" /> : <FiAlertCircle size={18} className="mt-0.5 shrink-0" />}
+                    <span>{feedback}</span>
+                  </div>
+                ) : null}
+
+                <div className="grid gap-3">
+                  <label htmlFor="contact-name" className="text-[11px] uppercase tracking-[0.3em] text-brand-mid font-bold ml-1.5">Nombre completo</label>
+                  <input
+                    id="contact-name"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    required
+                    autoComplete="name"
+                    className="w-full rounded-2xl border border-brand-soft/30 bg-brand-light/50 px-7 py-5 text-brand-primary outline-none transition-all placeholder:text-brand-mid/40 focus:border-brand-mid/60 focus:bg-white focus:ring-1 focus:ring-brand-mid/20 text-base"
+                    placeholder="Escribe tu nombre y apellidos"
+                  />
+                </div>
+                <div className="grid gap-3">
+                  <label htmlFor="contact-company" className="text-[11px] uppercase tracking-[0.3em] text-brand-mid font-bold ml-1.5">Empresa</label>
+                  <input
+                    id="contact-company"
+                    name="company"
+                    value={formData.company}
+                    onChange={handleChange}
+                    required
+                    autoComplete="organization"
+                    className="w-full rounded-2xl border border-brand-soft/30 bg-brand-light/50 px-7 py-5 text-brand-primary outline-none transition-all placeholder:text-brand-mid/40 focus:border-brand-mid/60 focus:bg-white focus:ring-1 focus:ring-brand-mid/20 text-base"
+                    placeholder="Nombre de tu empresa o negocio"
+                  />
+                </div>
+                <div className="grid gap-3">
+                  <label htmlFor="contact-phone" className="text-[11px] uppercase tracking-[0.3em] text-brand-mid font-bold ml-1.5">Teléfono</label>
+                  <input
+                    id="contact-phone"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    required
+                    autoComplete="tel"
+                    type="tel"
+                    className="w-full rounded-2xl border border-brand-soft/30 bg-brand-light/50 px-7 py-5 text-brand-primary outline-none transition-all placeholder:text-brand-mid/40 focus:border-brand-mid/60 focus:bg-white focus:ring-1 focus:ring-brand-mid/20 text-base"
+                    placeholder="Ej. 957 217 850"
+                  />
+                </div>
+                <div className="grid gap-3">
+                  <label htmlFor="contact-email" className="text-[11px] uppercase tracking-[0.3em] text-brand-mid font-bold ml-1.5">Correo electrónico</label>
+                  <input
+                    id="contact-email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
+                    autoComplete="email"
+                    className="w-full rounded-2xl border border-brand-soft/30 bg-brand-light/50 px-7 py-5 text-brand-primary outline-none transition-all placeholder:text-brand-mid/40 focus:border-brand-mid/60 focus:bg-white focus:ring-1 focus:ring-brand-mid/20 text-base"
+                    placeholder="tu@email.com"
+                    type="email"
+                  />
+                </div>
+                
+                <div className="grid gap-3">
+                  <label htmlFor="contact-message" className="text-[11px] uppercase tracking-[0.3em] text-brand-mid font-bold ml-1.5">Mensaje</label>
+                  <textarea
+                    id="contact-message"
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    required
+                    rows="4"
+                    className="w-full rounded-2xl border border-brand-soft/30 bg-brand-light/50 px-7 py-5 text-brand-primary outline-none transition-all placeholder:text-brand-mid/40 focus:border-brand-mid/60 focus:bg-white resize-none focus:ring-1 focus:ring-brand-mid/20 text-base"
+                    placeholder="Cuéntanos qué servicios necesitas y cualquier detalle importante"
+                  />
+                </div>
+
+                <div className="mt-3 flex flex-col gap-4">
+                  <button
+                    type="submit"
+                    disabled={!canSubmit || status === 'submitting'}
+                    className="inline-flex items-center justify-center rounded-full bg-brand-primary px-8 py-5 text-[13px] font-black uppercase tracking-widest text-brand-light transition-all duration-500 hover:-translate-y-1.5 shadow-md w-full disabled:cursor-not-allowed disabled:opacity-70 disabled:hover:translate-y-0"
+                  >
+                    {status === 'submitting' ? (
+                      <>
+                        ENVIANDO
+                        <FiLoader className="ml-3 animate-spin" />
+                      </>
+                    ) : (
+                      <>
+                        ENVIAR SOLICITUD
+                        <FiArrowRight className="ml-3" />
+                      </>
+                    )}
+                  </button>
+                  <p className="text-center text-[9px] uppercase tracking-[0.4em] text-brand-mid/70">
+                    Respuesta garantizada en menos de 24 horas
+                  </p>
+                </div>
+              </form>
             </div>
           </div>
         </motion.div>
