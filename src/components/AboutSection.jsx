@@ -65,9 +65,9 @@ const AboutSection = () => {
             <div className="relative">
               <div className="bg-white rounded-2xl shadow-xl p-10 md:p-12">
                 <div className="text-sm uppercase tracking-widest text-brand-mid font-semibold">Sobre CyM</div>
-                <h2 className="mt-4 text-3xl md:text-4xl font-semibold text-brand-primary leading-tight">CyM Centurión & Mendoza: diseño y construcción</h2>
+                <h2 className="mt-4 text-3xl md:text-4xl font-semibold text-brand-primary leading-tight">CyM Centurión & Mendoza: Diseño y Construcción</h2>
                 <p className="mt-6 text-brand-primary/85 leading-7 text-[15px] md:text-base">
-                  En CyM nos especializamos en diseño, construcción y supervisión de obras, creando espacios funcionales, estéticos y de alta calidad. Integramos creatividad, técnica y compromiso para ofrecer soluciones integrales que responden a las necesidades de cada cliente.
+                  Supervisión de obras de viviendas, edificios residenciales, locales comerciales e industriales, velando por el cumplimiento del diseño, la calidad constructiva, los plazos establecidos y la seguridad en obra.
                 </p>
                 <div className="mt-6">
                   <a href="#projects" className="inline-flex items-center rounded-md bg-brand-mid text-brand-light px-6 py-3 text-sm font-semibold shadow">Ver proyectos</a>

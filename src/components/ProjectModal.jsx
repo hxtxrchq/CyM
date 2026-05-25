@@ -123,7 +123,7 @@ const ProjectModal = ({ project, open, onClose }) => {
                 className="h-[220px] w-full object-contain object-center sm:h-[250px] md:h-[300px] lg:h-[340px]"
                 loading="eager"
                 decoding="async"
-                fetchPriority="high"
+                fetchpriority="high"
                 width="1400"
                 height="900"
                 sizes="(min-width: 768px) 820px, 100vw"

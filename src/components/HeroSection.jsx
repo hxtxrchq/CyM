@@ -5,7 +5,7 @@ import { FiArrowRight } from 'react-icons/fi'
 const slides = [
   {
     src: '/images/sections/hero/photo1.jpeg',
-    alt: 'Proyecto residencial para diseño y construcción',
+    alt: 'Proyecto residencial para Diseño y Construcción',
     className: 'object-cover object-center',
   },
   {

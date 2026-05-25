@@ -164,7 +164,7 @@ const ProjectCard = memo(function ProjectCard({
       animate={inView ? 'visible' : 'hidden'}
       onMouseEnter={handleMouseEnter}
       onClick={handleClick}
-      className="group relative cursor-pointer overflow-hidden rounded-[22px] bg-[#22231d] md:h-[540px]"
+      className="group relative cursor-pointer overflow-hidden rounded-[22px] bg-[#22231d] h-[360px] md:h-[540px]"
     >
       <div className="absolute inset-0 bg-[#2a2b25]">
         <img
@@ -173,7 +173,7 @@ const ProjectCard = memo(function ProjectCard({
           className="h-full w-full object-cover object-center transition-transform duration-500 ease-out group-hover:scale-[1.02]"
           loading="lazy"
           decoding="async"
-          fetchPriority="low"
+          fetchpriority="low"
           width="1200"
           height="1600"
           sizes="(min-width: 768px) 24vw, 100vw"
