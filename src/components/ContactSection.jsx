@@ -105,7 +105,7 @@ const ContactSection = () => {
         >
           <div className="relative rounded-[1rem] overflow-hidden flex flex-col min-h-[500px] md:min-h-[600px] bg-brand-light p-8 md:p-12 border border-brand-soft/20 shadow-editorial">
             <img
-              src="/images/sections/about/about1.jpg"
+              src="/images/sections/about/about1.jpeg"
               alt=""
               aria-hidden="true"
               className="absolute inset-0 h-full w-full object-cover opacity-[0.14]"
@@ -113,14 +113,7 @@ const ContactSection = () => {
               decoding="async"
             />
             <div className="absolute inset-0 bg-gradient-to-br from-brand-light/80 via-brand-light/60 to-brand-primary/10" />
-            <img
-              src="/images/realestate/decor-pin.svg"
-              alt=""
-              aria-hidden="true"
-              className="pointer-events-none absolute -right-36 -top-28 w-[520px] opacity-[0.10]"
-              loading="lazy"
-              decoding="async"
-            />
+            {/* decorative SVG removed to avoid 404 (file not found in public/images/realestate) */}
             <div className="relative z-10 flex flex-col h-full justify-center">
               <div className="eyebrow mb-6 text-brand-mid">Contacto</div>
               <h2 className="text-4xl md:text-5xl font-semibold text-brand-primary leading-[1.1] mb-6">
@@ -193,7 +186,7 @@ const ContactSection = () => {
 
           <div className="relative rounded-[1rem] border border-brand-soft/20 bg-white p-10 md:p-14 shadow-editorial self-center text-gray-900 overflow-hidden">
             <img
-              src="/images/sections/hero/photo2.jpg"
+              src="/images/sections/hero/photo2.jpeg"
               alt=""
               aria-hidden="true"
               className="absolute inset-0 h-full w-full object-cover opacity-[0.10]"

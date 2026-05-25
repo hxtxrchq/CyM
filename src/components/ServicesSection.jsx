@@ -97,22 +97,7 @@ const ServicesSection = () => {
 
   return (
     <section id="services" className="section-gap bg-white text-[#2f352b] scroll-mt-24 md:scroll-mt-28 relative overflow-hidden">
-      <img
-        src="/images/realestate/decor-key.svg"
-        alt=""
-        aria-hidden="true"
-        className="pointer-events-none absolute -left-24 bottom-6 w-[520px] opacity-[0.22] blur-[0.2px]"
-        loading="lazy"
-        decoding="async"
-      />
-      <img
-        src="/images/realestate/decor-pin.svg"
-        alt=""
-        aria-hidden="true"
-        className="pointer-events-none absolute -right-24 -top-10 w-[460px] opacity-[0.18]"
-        loading="lazy"
-        decoding="async"
-      />
+      {/* decorative SVGs removed to avoid 404s (files not found in public/images/realestate) */}
       <div className="section-shell" ref={ref}>
         <motion.div
           variants={containerVariants}

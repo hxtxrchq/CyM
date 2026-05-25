@@ -35,14 +35,7 @@ const AboutSection = () => {
 
   return (
     <section id="about" className="section-gap bg-white scroll-mt-24 md:scroll-mt-28 relative overflow-hidden">
-      <img
-        src="/images/realestate/decor-pin.svg"
-        alt=""
-        aria-hidden="true"
-        className="pointer-events-none absolute -left-28 -top-24 w-[520px] opacity-[0.12]"
-        loading="lazy"
-        decoding="async"
-      />
+      {/* decorative SVG removed to avoid 404 (file not found in public/images/realestate) */}
       <div ref={ref} className="section-shell">
         <motion.div
           initial={{ opacity: 0, y: 18 }}
