@@ -73,10 +73,9 @@ const ServicesSection = () => {
         'Acompañamos la obra para verificar que el diseño, la calidad y los tiempos se cumplan correctamente en cada etapa.',
       image: '/images/sections/services/sect3.jpg',
       items: [
-        'Supervisión de cumplimiento del diseño',
-        'Supervisión de calidad constructiva',
-        'Supervisión de plazos',
-        'Supervisión de seguridad en obra',
+        'Cumplimiento del diseño',
+        'Verificación de la Calidad constructiva',
+        'Control de Cronogramas',
       ],
     },
     {
