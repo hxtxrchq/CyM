@@ -1,8 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- Contexto SEO: CEYME Perú, Cymperu, ceyme, cymperu -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://ceymeconstruye.com/</loc>
+    <loc>https://ceymeperu.org/</loc>
+    <lastmod>2026-05-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
+  <url>
+    <loc>https://ceymeperu.org/#about</loc>
+    <lastmod>2026-05-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ceymeperu.org/#services</loc>
+    <lastmod>2026-05-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ceymeperu.org/#projects</loc>
+    <lastmod>2026-05-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ceymeperu.org/#allies</loc>
+    <lastmod>2026-05-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://ceymeperu.org/#faq</loc>
+    <lastmod>2026-05-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://ceymeperu.org/#contact</loc>
+    <lastmod>2026-05-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ceymeperu.org/#location</loc>
+    <lastmod>2026-05-27</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <!-- Nota de publicación: 1) Sube este archivo a la raíz pública del dominio como https://ceymeperu.org/sitemap.xml. 2) Envía esa URL en Google Search Console desde Sitemaps. 3) Verifica que la respuesta sea 200, que el XML se pueda leer en navegador y que Search Console la procese sin errores. -->
 </urlset>
