@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://ceymeconstruye.com/sitemap.xml
+Sitemap: https://ceymeperu.org/sitemap.xml
